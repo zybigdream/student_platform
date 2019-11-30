@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <h1>学生列表</h1>
+    <h3><a href="/stu/toAdd">添加学生</a> </h3>
 
     <table>
         <tr>
@@ -16,13 +18,29 @@
             <td>操作</td>
         </tr>
 
-        <tr th:each="stu : ${stus}">
+        <tr th:each="stu : ${studentList}">
             <td th:text="${stu.id}">编号</td>
             <td th:text="${stu.sname}">学生姓名</td>
             <td th:text="${stu.age}">年龄</td>
-            <td th:text="${stu.cls.cname}">所属班级</td>
-            <td><a th:href="/tec/update?id=${stu.id}">修改</a><a th:href="/tec/delete?id=${stu.id}">删除</a></td>
+            <td th:text="${stu.cid}">所属班级</td>
+<!--            <td th:text="${stu.cls.cname}">所属班级</td>-->
+            <td>
+                <a th:href="|stu/toUpd/${stu.id}|">编辑</a>
+                <a th:href="|stu/del/${stu.id}|">删除</a>
+            </td>
         </tr>
     </table>
 </body>
+
+<script>
+    // $(function () {
+    //     function upd(id) {
+    //         alert(id)
+    //     }
+    //    
+    //     function del(id) {
+    //         alert(id)
+    //     }
+    // })
+</script>
 </html>

@@ -1,5 +1,6 @@
 package com.lzx;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,5 +18,6 @@ public class Student extends  BaseEntity{
     private String sname;
     private Integer age;
     private  Integer cid;
-
+    @TableField(exist = false)
+    private Cls cls;
 }
