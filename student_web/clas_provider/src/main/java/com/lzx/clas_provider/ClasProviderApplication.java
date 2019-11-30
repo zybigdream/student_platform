@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.lzx.dao")
-@DubboComponentScan("com.qf.service.impl")
+@DubboComponentScan("com.lzx.service.impl")
 public class ClasProviderApplication {
 
     public static void main(String[] args) {
