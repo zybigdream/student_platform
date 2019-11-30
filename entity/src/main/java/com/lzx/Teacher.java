@@ -13,5 +13,5 @@ import lombok.experimental.Accessors;
 
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Teacher {
+public class Teacher extends BaseEntity {
 }
