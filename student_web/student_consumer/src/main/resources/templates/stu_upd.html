@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymelleaf.org">
 <head>
-	<base th:href="|${#request.getContextPath())}/|">
+
 	<meta charset="UTF-8">
 	<title>Title</title>
 </head>
 <body>
 	<form action="/stu/add" method="post">
-		<input type="text" name="sname" value="${student.sname}">
-		<input type="text" name="age" value="${student.age}">
-		<select name="cid">
-			<option value="1">一年级一班</option>
-			<option value="2">一年级二班</option>
-			<option value="3">一年级三班</option>
+		<input type="text" name="sname" th:value="${student.sname}">
+		<input type="text" name="age" th:value="${student.age}">
+		<select  name="cid">
+			<option value="1" th:if="${student.cid==1}" th:selected="selected" >一年级一班</option>
+			<option value="2" th:if="${student.cid==2}" th:selected="selected">一年级二班</option>
+			<option value="3" th:if="${student.cid==3}" th:selected="selected">一年级三班</option>
 		</select>
 		<input type="submit" value="确定添加">
 	</form>
