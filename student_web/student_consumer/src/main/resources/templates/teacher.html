@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Title</title>
+    <script th:src="@{jquery-1.8.3.js}"></script>
+    <script >
+        function del(id){
+            $.ajax({
+                type:"get",
+                url:"[[@{/tec/delete}]]",
+                data:{"id":id},
+                success:function (data) {
+                    location=location;
+                }
+            })
+        }
+    </script>
+
 </head>
 <body>
     <h1>教师列表</h1>
@@ -26,8 +41,8 @@
             <td th:text="${tea.subjects}">授课项目</td>
             <td th:text="${tea.age}">年龄</td>
             <td th:text="${tea.sex}">性别</td>
-            <td th:text="${tea.modifcationtime}">入职时间</td>
-           <td><a th:href="|/tec/update?id=${tea.id}|">修改</a><a th:href="|/tec/delete?id=${tea.id}|">删除</a></td>
+            <td th:text="${tea.creationtime}">入职时间</td>
+           <td><a th:href="|/tec/update?id=${tea.id}|">修改</a><!--<a th:href="|/tec/delete?id=${tea.id}|">--><a th:href="@{'javascript:del('+${tea.id}+')'}">删除</a></td>
         </tr>
     </table>
 
