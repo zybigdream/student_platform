@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{jquery-1.8.3.js}"></script>
+</head>
+<body>
+    <h1>教师列表</h1>
+    <form action="/tec/tijiaoup" method="get">
+
+    <table>
+        <tr>
+            <td>教师名称 <input type="text" name="tname" th:value="${tes.tname}"> <input type="hidden" name="id" th:value="${tes.id}"></td>
+
+        </tr>
+        <tr>
+            <td>授课项目<input type="text" name="subjects" th:value="${tes.subjects}"></td>
+        </tr>
+        <tr>
+            <td>年龄<input type="text" name="age" th:value="${tes.age}"></td>
+        </tr>
+        <tr>
+            <td>性别<input type="text" name="sex" th:value="${tes.sex}"></td>
+        </tr>
+        <tr>
+            <td>入职时间<input type="text" name="creationtime" th:value="${tes.creationtime}"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit"  value="提交">
+            </td>
+        </tr>
+    </table>
+    </form>
+
+</body>
+</html>

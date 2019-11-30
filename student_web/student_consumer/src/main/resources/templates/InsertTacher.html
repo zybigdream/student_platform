@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{jquery-1.8.3.js}"></script>
+    <script th:type="javascript">/*
+        $(function () {
+            alert("123");
+            $("#tijiao").click(
+
+                $.ajax({
+                    url:"/tac/tijiao",
+                    type:"get",
+                    data: "$('#from').serialize()",
+                    success:function(data){
+
+                    }
+                })
+            )
+        })
+    */</script>
+</head>
+<body>
+    <h1>教师列表</h1>
+    <form action="/tec/tijiao" method="get">
+    <table>
+        <tr>
+            <td>教师名称 <input type="text" name="tname" ></td>
+        </tr>
+        <tr>
+            <td>授课项目<input type="text" name="subjects" ></td>
+        </tr>
+        <tr>
+            <td>年龄<input type="text" name="age" ></td>
+        </tr>
+        <tr>
+            <td>性别<input type="text" name="sex" ></td>
+        </tr>
+        <tr>
+            <td>入职时间<input type="text" name="creationtime" ></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="tijiao" value="提交">
+            </td>
+        </tr>
+    </table>
+    </form>
+
+</body>
+</html>
