@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<base href="/">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script th:src="@{jquery-1.8.3.js}"></script>
+<script >
+    function del(id) {
+
+        $.ajax({
+            type: 'POST',
+            url:"[[@{/cls/del}]]",
+            data:{"id":id},
+            success: function(data){
+                if (data){
+                    if (data>0) {
+                        alert("删除成功！！")
+                        location=location;
+                    }
+
+                }
+            },
+        });
+    }
+
+</script>
 <body>
     <h1>班级列表</h1>
     <table>
@@ -13,11 +35,13 @@
             <td>班级总人数</td>
             <td>操作</td>
         </tr>
-        <tr th:each="cls : ${clss}">
+        <tr th:each="cls : ${cls}">
             <td th:text="${cls.id}">id</td>
             <td th:text="${cls.cname}">班级名称</td>
             <td th:text="${cls.cnum}">班级总人数</td>
-            <td><a th:href="/tec/update?id=${cls.id}">修改</a><a th:href="/tec/delete?id=${cls.id}">删除</a></td>
+            <td><a th:href="|/cls/update?id=${cls.id}|">修改</a>
+                <a class="delete" th:href="@{'javascript:del('+${cls.id}+')'}"  >删除</a>
+            </td>
         </tr>
     </table>
 

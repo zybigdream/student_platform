@@ -4,7 +4,10 @@ dubbo:
   application:
     name: myconsumer
   registry:
-    address: zookeeper://120.77.153.175:2181
-#      address: zookeeper://192.168.79.188:2181
+    address: zookeeper://192.168.239.200:2181
   consumer:
     check: false
+
+spring:
+  thymeleaf:
+    cache: false

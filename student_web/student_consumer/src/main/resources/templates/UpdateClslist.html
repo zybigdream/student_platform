@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+
 </head>
 <body>
     <h1>班级列表</h1>
-    <form id="from">
+    <form  action="/cls/update2" method="post">
         <table>
             <tr>
-                <td>班级名称<input type="text" name="cname" ></td>
+                <td>班级编号<input type="text" name="id" th:value="${cls.id}" ></td>
             </tr>
             <tr>
-                <td><input type="button" id="update">添加</td>
+                <td>班级名称<input type="text" name="cname" th:value="${cls.cname}" ></td>
             </tr>
-        </table>  
+            <tr>
+                <td>班级人数<input type="text" name="cnum" th:value="${cls.cnum}" ></td>
+
+            </tr>
+            <tr>
+                <input type="submit"value="提交" >
+            </tr>
+
+        </table>
     </form>
 
 </body>

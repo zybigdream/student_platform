@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
  * @date 2019/11/30
  */
 @Data
-
+@AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Student extends  BaseEntity{
