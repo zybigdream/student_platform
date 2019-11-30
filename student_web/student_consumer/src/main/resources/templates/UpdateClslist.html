@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="static/jQuery1.8.3_20121215.chm"></script>
+    <script type="javascript">
+        $(function () {
+            $("#updata").click(
+                $.ajax({
+                    url:"",
+                    type:"get",
+                    data: $("#from").serialize(),
+                    success:function(data){
+
+                     }
+                 })
+            )
+        })
+    </script>
+</head>
+<body>
+    <h1>班级列表</h1>
+    <form id="from">
+        <table>
+            <tr>
+                <td>班级名称<input type="text" name="cname" ></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="update">添加</td>
+            </tr>
+        </table>  
+    </form>
+
+</body>
+</html>
