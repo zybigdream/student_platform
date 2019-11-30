@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql:10.36.140.200/db_tea?serverTimezone=GMT%2B8
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+dubbo:
+  registry:
+    address: zookeeper://192.168.239.200:2181
+  application:
+    name: teaprovider
+  protocol:
+    port: -1
+  consumer:
+    check: false
