@@ -14,4 +14,8 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Student extends  BaseEntity{
+    private String sname;
+    private Integer age;
+    private  Integer cid;
+
 }
