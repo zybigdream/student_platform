@@ -9,10 +9,11 @@
 	<form action="/stu/add" method="post">
 		<input type="text" name="sname">
 		<input type="text" name="age">
+
 		<select name="cid">
-			<option value="1">一年级一班</option>
-			<option value="2">一年级二班</option>
-			<option value="3">一年级三班</option>
+			<a th:each="cla : ${clist}">
+			<option    value="${cla.id}" th:text="${cla.cname}"></option>
+			</a>
 		</select>
 		<input type="submit" value="确定添加">
 	</form>

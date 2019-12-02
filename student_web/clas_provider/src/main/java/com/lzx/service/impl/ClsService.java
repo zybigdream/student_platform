@@ -44,4 +44,18 @@ public class ClsService implements IClsService {
        cs.setStatus(0);
         return clsDao.updateById(cs);
     }
+
+    @Override
+    public void addrenshu(Integer id) {
+        Cls cls=clsDao.selectById(id);
+        cls.setCnum(cls.getCnum()+1);
+        clsDao.updateById(cls);
+    }
+
+    @Override
+    public void deleterenshu(Integer cid) {
+        Cls cls=clsDao.selectById(cid);
+        cls.setCnum(cls.getCnum()-1);
+        clsDao.updateById(cls);
+    }
 }

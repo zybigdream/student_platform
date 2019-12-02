@@ -14,4 +14,8 @@ public interface IClsService {
     void update(Cls cls);
 
     int delete(Integer id);
+
+    void addrenshu(Integer id);
+
+    void deleterenshu(Integer cid);
 }

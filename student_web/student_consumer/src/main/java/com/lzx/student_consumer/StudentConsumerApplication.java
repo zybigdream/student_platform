@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class StudentConsumerApplication {
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         SpringApplication.run(StudentConsumerApplication.class, args);
     }
+
+
 
 }
