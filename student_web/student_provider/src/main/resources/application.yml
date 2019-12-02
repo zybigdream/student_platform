@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:mysql://192.168.1.106:3306/db_stu?serverTimezone=GMT%2B8
-    username: ljc
+    url: jdbc:mysql://120.77.153.175:3306/db_stu?serverTimezone=GMT%2B8
+    username: root1
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 dubbo:
